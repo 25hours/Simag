@@ -1,0 +1,18 @@
+Simag
+========table structure
+
+
+====mysql
+admin: add user,change authority,roll back,audit
+user
+user_id
+
+
+
+====mongo
+id project task user codeserver codelist operation stauts timestamp
+
+
+
+========flow structure
+check dir is exist --> code checkout to nfs --> deployment to server
