@@ -12,9 +12,9 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     project = db.Column(db.String(128))
     task = db.Column(db.String(256))
-    user
-    codeserver
-    codelist
-    operation
-    stauts
-    timestamp
+    user = db.Column(db.String(64))
+    code_server = db.Column(db.String(64))
+    code_list = db.Column(db.Text)
+    operation = db.Column(db.String(32))
+    status = db.Column(db.String(32))
+    timestamp = db.Column(db.DateTime)
