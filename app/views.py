@@ -16,3 +16,7 @@ def publish():
 @app.route('/table')
 def table():
     return render_template('table.html')
+
+@app.route('/proto_table')
+def proto_table():
+    return render_template('proto_table.html')
