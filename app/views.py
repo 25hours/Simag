@@ -20,3 +20,7 @@ def table():
 @app.route('/proto_table')
 def proto_table():
     return render_template('proto_table.html')
+
+@app.route('/proto_publish')
+def proto_publish():
+    return render_template('proto_publish.html')
