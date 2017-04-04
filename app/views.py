@@ -8,3 +8,7 @@ def index():
 @app.route('/login')
 def login():
     return render_template('login.html')
+
+@app.route('/publish')
+def publish():
+    return render_template('publish.html')
