@@ -13,7 +13,7 @@ user_id
 task  project notification codeserver codelist submmit
 
 ====publish feedback
-task_id project task user codeserver codelist operation/onine/rollback stauts timestamp
+task_id project task user codeserver codelist  stauts timestamp action
 
 ========flow structure
 check dir is exist --> code checkout to nfs --> deployment to server
