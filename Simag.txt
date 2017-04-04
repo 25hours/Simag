@@ -9,10 +9,11 @@ user_id
 
 
 
-====task
+====publish commit
+task  project notification codeserver codelist operation stauts timestamp
+
+====publish feedback
 id project task user codeserver codelist operation stauts timestamp
-
-
 
 ========flow structure
 check dir is exist --> code checkout to nfs --> deployment to server
