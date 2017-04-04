@@ -1,35 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+    	<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Login Simag</title>
 
-    <!-- Favicon and touch icons -->
-    <link href="/static/icon/favicon.ico" rel="icon">
-    <title>login</title>
+		<!-- Import google fonts - Heading first/ text second -->
+{#        <link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />#}
 
-    <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Favicon and touch icons -->
+		<link rel="shortcut icon" href="/static/icon/favicon.ico" type="image/x-icon" />
 
-    <!-- Custom styles for this template -->
-    <link href="/static/css/signin.css" rel="stylesheet">
+	    <!-- Css files -->
+	    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/static/css/jquery.mmenu.css" rel="stylesheet">
+		<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/static/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+	    <link href="/static/css/style.min.css" rel="stylesheet">
+		<link href="/static/css/add-ons.min.css" rel="stylesheet">
+		<style>
+			footer {
+				display: none;
+			}
+		</style>
 
+	</head>
 </head>
 
 <body>
-    <div class="container">
-        <form class ="form-signin">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus="">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-    </div>
+	<div class="container-fluid content">
+		<div class="row">
+			<div id="content" class="col-sm-12 full">
+				<div class="row">
+					<div class="login-box">
+						<div class="header">
+						Login to Simag
+						</div>
+						<div class="text-center">
+							<li><a href="" class="fa fa-facebook facebook-bg"></a></li>
+							<li><a href="" class="fa fa-twitter twitter-bg"></a></li>
+							<li><a href="" class="fa fa-linkedin linkedin-bg"></a></li>
+						</div>
+
+						<div class="text-with-hr">
+							<span>or</span>
+						</div>
+
+						<form class="form-horizontal login" action="index.html" method="post">
+
+							<fieldset class="col-sm-12">
+								<div class="form-group">
+									<div class="controls row">
+										<div class="input-group col-sm-12">
+											<input type="text" class="form-control" id="username" placeholder="Username or E-mail"/>
+											<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="controls row">
+										<div class="input-group col-sm-12">
+											<input type="password" class="form-control" id="password" placeholder="Password"/>
+											<span class="input-group-addon"><i class="fa fa-key"></i></span>
+										</div>
+									</div>
+								</div>
+
+								<div class="confirm">
+									<input type="checkbox" name="remember"/>
+									<label for="remember">Remember me</label>
+								</div>
+
+								<div class="row">
+
+									<button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
+
+								</div>
+
+							</fieldset>
+						</form>
+
+						<div class="clearfix"></div>
+					</div>
+				</div><!--/row-->
+			</div>
+		</div><!--/row-->
+
+	</div><!--/container-->
+	<!-- start: JavaScript-->
+			<script src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='/static/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
+		</script>
+	<script src="/static/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+
+	<!-- theme scripts -->
+	<script src="/static/js/SmoothScroll.js"></script>
+	<script src="/static/js/jquery.mmenu.min.js"></script>
+	<script src="/static/js/core.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+	<script src="/static/js/pages/login.js"></script>
+
+	<!-- end: JavaScript-->
 </body>
 </html>
