@@ -1,1 +1,1 @@
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@192.168.11.137:3306/simqg'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@192.168.11.137:3306/simag'
