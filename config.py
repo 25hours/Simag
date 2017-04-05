@@ -1,1 +1,2 @@
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@192.168.11.137:3306/simag'
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root123@192.168.11.137:3306/Simag'
+SQLALCHEMY_TRACK_MODIFICATIONS = 'True'
