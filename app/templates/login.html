@@ -27,13 +27,13 @@
 						<div class="header">
 						Login to Simag
 						</div>
-						<form class="form-horizontal login" action="index.html" method="post">
+						<form class="form-horizontal login" method="post">
 							<fieldset class="col-sm-12">
 								<div class="form-group">
 									<div class="controls row">
 										<div class="input-group col-sm-12">
 											<span class="input-group-addon"><i class="fa fa-user"></i></span>
-											<input type="text" class="form-control" id="username" placeholder="Username"/>
+											<input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
 										</div>
 									</div>
 								</div>
@@ -41,7 +41,7 @@
 									<div class="controls row">
 										<div class="input-group col-sm-12">
 											<span class="input-group-addon"><i class="fa fa-key"></i></span>
-											<input type="password" class="form-control" id="password" placeholder="Password"/>
+											<input type="password" class="form-control" id="password" name="password" placeholder="Password"/>
 										</div>
 									</div>
 								</div>
@@ -50,7 +50,7 @@
 									<label for="remember">Remember me</label>
 								</div>
 								<div class="row">
-									<button type="submit" class="btn btn-lg btn-primary col-xs-12">Login</button>
+									<button type="submit" class="btn btn-lg btn-primary col-xs-12" value="login">Login</button>
 								</div>
 							</fieldset>
 						</form>

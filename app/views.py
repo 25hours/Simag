@@ -7,31 +7,13 @@ from app.models import *
 def index():
     return render_template('index.html')
 
-@app.route('/login')
+@app.route('/login',methods=['GET','POST'])
 def login():
-    return render_template('login.html')
-
-@app.route('/proto_login',methods=['GET','POST'])
-def proto_login():
-    form = LoginForm()
     if request.method == 'POST':
-        # infos = User.query.filter_by(username=username)
         if request.form['username'] == 'test1' and request.form['password'] == '123':
-            return redirect(url_for('proto_publish'))
-    return render_template('proto_login.html',form=form)
-
-@app.route('/publish')
-def publish():
-    return render_template('publish.html')
+            return redirect(url_for('index'))
+    return render_template('login.html')
 
 @app.route('/table')
 def table():
     return render_template('table.html')
-
-@app.route('/proto_table')
-def proto_table():
-    return render_template('proto_table.html')
-
-@app.route('/proto_publish')
-def proto_publish():
-    return render_template('proto_publish.html')
