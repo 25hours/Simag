@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>proto_login</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="username" value="{{ form.username.data }}" placeholder="username">
+        <input type="password" name="password" value="{{ form.password.data }}" placeholder="password">
+        <span>
+            <button type="submit" value="{{ form.validate_on_submit }}">login</button>
+        </span>
+    </form>
+</body>
+</html>
