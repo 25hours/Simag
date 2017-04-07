@@ -45,6 +45,11 @@
 										</div>
 									</div>
 								</div>
+                                <div>
+                                    {% for message in get_flashed_messages() %}
+                                        {{ message }}
+                                    {% endfor %}
+                                </div>
 								<div class="confirm">
 									<input type="checkbox" name="remember"/>
 									<label for="remember">Remember me</label>
@@ -72,7 +77,7 @@
 	<script src="/static/js/jquery.mmenu.min.js"></script>
 	<script src="/static/js/core.min.js"></script>
 	<!-- inline scripts related to this page -->
-	<script src="/static/js/pages/login.js"></script>
+{#	<script src="/static/js/pages/login.js"></script>#}
 	<!-- end: JavaScript-->
 </body>
 </html>

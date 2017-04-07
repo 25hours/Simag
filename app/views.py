@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,request,url_for,redirect,session
+from flask import render_template,request,url_for,redirect,session,flash
 from app.forms import LoginForm
 from app.models import *
 
@@ -10,10 +10,13 @@ def index():
 
 @app.route('/login',methods=['GET','POST'])
 def login():
+    form = LoginForm()
     if request.method == 'POST':
-        if request.form['username'] == 'test1' and request.form['password'] == '123':
-            session['username'] = request.form['username']
+        if form.username.data == 'test1' and form.password.data == '123':
+            session['username'] = form.username.data
             return redirect(url_for('index'))
+        else:
+            flash('please input the right username and password')
     return render_template('login.html')
 
 @app.route('/table')
