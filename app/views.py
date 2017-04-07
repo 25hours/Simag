@@ -16,7 +16,7 @@ def login():
             session['username'] = form.username.data
             return redirect(url_for('index'))
         else:
-            flash('please input the right username and password')
+            flash('username or password wrong')
     return render_template('login.html')
 
 @app.route('/table')

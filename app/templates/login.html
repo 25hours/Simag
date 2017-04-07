@@ -45,15 +45,15 @@
 										</div>
 									</div>
 								</div>
-                                <div>
+                                <div style="color: red;text-align: center" class="confirm">
                                     {% for message in get_flashed_messages() %}
-                                        {{ message }}
+                                        <strong>{{ message }}</strong>
                                     {% endfor %}
                                 </div>
-								<div class="confirm">
-									<input type="checkbox" name="remember"/>
-									<label for="remember">Remember me</label>
-								</div>
+{#								<div class="confirm">#}
+{#									<input type="checkbox" name="remember"/>#}
+{#									<label for="remember">Remember me</label>#}
+{#								</div>#}
 								<div class="row">
 									<button type="submit" class="btn btn-lg btn-primary col-xs-12" value="login">Login</button>
 								</div>
