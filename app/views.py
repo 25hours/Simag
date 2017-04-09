@@ -1,22 +1,28 @@
 from app import app
-from flask import render_template,request,url_for,redirect,session,flash
+from flask import render_template,request,url_for,redirect,flash
 from app.forms import LoginForm
 from app.models import *
+from flask_login import login_required,login_user,logout_user
 
 @app.route('/')
+@login_required
 def index():
-    print(session['username'])
+    # print(session['username'])
     return render_template('index.html')
 
 @app.route('/login',methods=['GET','POST'])
 def login():
     form = LoginForm()
-    if request.method == 'POST':
-        if form.username.data == 'test1' and form.password.data == '123':
-            session['username'] = form.username.data
+    # if request.method == 'POST':
+    if form.validate_on_submit():
+        # print(form.username.data)
+        user = User.query.filter_by(username=form.username.data,password=form.password.data).first()
+        if user is not None:
+            login_user(user,form.remember.data)
+        # if form.username.data == 'test1' and form.password.data == '123':
+            # session['username'] = form.username.data
             return redirect(url_for('index'))
-        else:
-            flash('username or password wrong')
+        flash('Invalid username or password')
     return render_template('login.html')
 
 @app.route('/table')
@@ -24,8 +30,10 @@ def table():
     return render_template('table.html')
 
 @app.route('/logout')
+@login_required
 def logout():
-    session.pop('username',None)
+    logout_user()
+    # session.pop('username',None)
     # print('==========')
     # print(session['username'])
     return redirect(url_for('login'))
