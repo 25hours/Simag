@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,request,url_for,redirect,flash
+from flask import render_template,url_for,redirect,flash
 from app.forms import LoginForm
 from app.models import *
 from flask_login import login_required,login_user,logout_user
@@ -15,7 +15,6 @@ def login():
     form = LoginForm()
     # if request.method == 'POST':
     if form.validate_on_submit():
-        print(form.validate_on_submit())
         user = User.query.filter_by(username=form.username.data,password=form.password.data).first()
         if user is not None:
             login_user(user,form.remember.data)
