@@ -1,9 +1,9 @@
 from app import db
-# from flask_login import UserMixin
-# from app import login_manager
+from flask_login import UserMixin
+from app import login_manager
 
-# class User(UserMixin,db.Model):
-class User(db.Model):
+class User(UserMixin,db.Model):
+# class User(db.Model):
     __tablename__ = 'Users'
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     username = db.Column(db.String(64))
@@ -15,9 +15,9 @@ class User(db.Model):
         return '<%s (%r,%r,%r,%r,%r)>' % (self.__class__.__name__,self.id,self.username,self.password,self.role,self.email)
 
 
-# @login_manager.user_loader
-# def load_user(user_id):
-#     return User.query.get(int(user_id))
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 class Task(db.Model):
     __tablename__ = 'Tasks'
