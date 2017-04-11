@@ -1,13 +1,20 @@
 from app import app
 from flask import render_template,url_for,redirect,flash
-from app.forms import LoginForm
+from app.forms import LoginForm,TaskForm
 from app.models import *
-from flask_login import login_required,login_user,logout_user
+from flask_login import login_required,login_user,logout_user,current_user
+from datetime import datetime
 
-@app.route('/')
+@app.route('/',methods=['GET','POST'])
 @login_required
 def index():
-    return render_template('index.html')
+    form = TaskForm()
+    if form.validate_on_submit():
+        tasks = Task(project=form.project.data,task=form.task.data,user=current_user,code_server=form.code_server.data,code_list=form.code_list.data,timestamp=datetime.now().strftime('%Y%m%d%H%M'))
+        db.session.add(tasks)
+        db.session.commit()
+        return redirect(url_for('table'))
+    return render_template('index.html',form=form)
 
 @app.route('/login',methods=['GET','POST'])
 def login():

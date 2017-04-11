@@ -8,7 +8,7 @@ class User(UserMixin,db.Model):
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     username = db.Column(db.String(64))
     password = db.Column(db.String(64))
-    role = db.Column(db.String(64))
+    administrator = db.Column(db.Boolean,default=False)
     email = db.Column(db.String(64))
 
     def __repr__(self):
@@ -20,7 +20,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 class Task(db.Model):
-    __tablename__ = 'Tasks'
+    __tablename__ = 'Task'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     project = db.Column(db.String(128))
     task = db.Column(db.String(256))
