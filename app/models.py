@@ -27,9 +27,9 @@ class Task(db.Model):
     user = db.Column(db.String(64))
     code_server = db.Column(db.String(64))
     code_list = db.Column(db.Text)
-    operation = db.Column(db.String(32))
-    status = db.Column(db.String(32))
     timestamp = db.Column(db.DateTime)
+    status = db.Column(db.String(32))
+    operation = db.Column(db.String(32))
 
     def __repr__(self):
         return '<%s (%r,%r,%r,%r,%r)>' % (

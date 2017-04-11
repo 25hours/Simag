@@ -7,7 +7,6 @@ from flask_login import login_required,login_user,logout_user
 @app.route('/')
 @login_required
 def index():
-    # print(session['username'])
     return render_template('index.html')
 
 @app.route('/login',methods=['GET','POST'])
