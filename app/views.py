@@ -9,8 +9,11 @@ from datetime import datetime
 @login_required
 def index():
     form = TaskForm()
+    # if True:
     if form.validate_on_submit():
-        tasks = Task(project=form.project.data,task=form.task.data,user=current_user,
+        # print(current_user.username)
+        # tasks = Task(project=form.project.data,task=form.task.data,user='user',
+        tasks = Task(project=form.project.data,task=form.task.data,user=current_user.username,
                      code_server=form.code_server.data,code_list=form.code_list.data)
         db.session.add(tasks)
         db.session.commit()

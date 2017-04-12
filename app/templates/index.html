@@ -23,14 +23,14 @@
 	<div class="navbar" role="navigation">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-actions navbar-left">
-				<li class="visible-md visible-lg"><a href="form-elements.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
-				<li class="visible-xs visible-sm"><a href="form-elements.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
+				<li class="visible-md visible-lg"><a href="index.html#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+				<li class="visible-xs visible-sm"><a href="index.html#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>			
 			</ul>
 			
-			<form class="navbar-form navbar-left">
-				<button type="submit" class="fa fa-search"></button>
-				<input type="text" class="form-control" placeholder="Search..."></a>
-			</form>
+{#			<form class="navbar-form navbar-left">#}
+{#				<button type="submit" class="fa fa-search"></button>#}
+{#				<input type="text" class="form-control" placeholder="Search..."></a>#}
+{#			</form>#}
 			
 	        <ul class="nav navbar-nav navbar-right">
 				<li class="dropdown visible-md visible-lg">
@@ -196,7 +196,7 @@
 							<li>
 								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> Forms</span> <span class="fa fa-angle-down pull-right"></span></a>
 								<ul class="nav sub">
-									<li><a href="form-elements.html"><i class="fa fa-indent"></i><span class="text"> Form elements</span></a></li>
+									<li><a href="index.html"><i class="fa fa-indent"></i><span class="text"> Form elements</span></a></li>
 									<li><a href="form-wizard.html"><i class="fa fa-tags"></i><span class="text"> Wizard</span></a></li>
 									<li><a href="form-dropzone.html"><i class="fa fa-plus-square-o"></i><span class="text"> Dropzone Upload</span></a></li>
 									<li><a href="form-x-editable.html"><i class="fa fa-pencil"></i><span class="text"> X-editable</span></a></li>
@@ -269,19 +269,20 @@
                                 <h2><i class="fa fa-indent red"></i><strong>Basic Form Elements</strong></h2>
                             </div>
                             <div class="panel-body">
-                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal ">
+{#                                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal ">#}
+                                <form method="post" class="form-horizontal ">
                                     {{ form.hidden_tag() }}
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="text-input">Task</label>
                                         <div class="col-md-9">
-                                            <input type="text" id="text-input" name="text-input" class="form-control" placeholder="Text">
+                                            <input type="text" id="text-input" name="task" class="form-control" placeholder="Text">
                                             <span class="help-block">This is a help text</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="selectError2">Project</label>
                                         <div class="col-md-9">
-                                            <select class="form-control" data-placeholder="Your Favorite Football Team" id="selectError2" data-rel="chosen">
+                                            <select class="form-control" data-placeholder="Your Favorite Football Team" id="selectError2" name="project" data-rel="chosen">
                                                 <option value=""></option>
                                                 <optgroup label="NFC EAST">
                                                     <option>Dallas Cowboys</option>
@@ -321,7 +322,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="select">Code Server</label>
                                         <div class="col-md-9">
-                                            <select id="select" name="select" class="form-control" size="1">
+                                            <select id="select" name="code_server" class="form-control" size="1">
                                                 <option value="0">Please select</option>
                                                 <option value="1">Option #1</option>
                                                 <option value="2">Option #2</option>
@@ -332,15 +333,19 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label" for="textarea-input">Code Lists</label>
                                         <div class="col-md-9">
-                                            <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" placeholder="Content.."></textarea>
+                                            <textarea id="textarea-input" name="code_list" rows="9" class="form-control" placeholder="Content.."></textarea>
                                         </div>
                                     </div>
                                     <br>
+{#                                    <a href="index.html#" class="btn-setting">#}
+                                    <button type="submit" class="btn btn-sm btn-success" name="Submit"><i class="fa fa-dot-circle-o"></i>Submit</button>
+{#                                    </a>#}
+                                    <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i>Reset</button>
                                 </form>
-                                <a href="form-elements.html#" class="btn-setting">
-                                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> Submit</button>
-                                </a>
-                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
+{#                                <a href="index.html#" class="btn-setting">#}
+{#                                    <button type="submit" class="btn btn-sm btn-success" name="Submit"><i class="fa fa-dot-circle-o"></i> Submit</button>#}
+{#                                </a>#}
+{#                                <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>#}
                             </div>
                         </div>
                     </div>
@@ -349,23 +354,23 @@
 	    </div><!-- end: row -->
     </div><!-- end: content -->
 	
-	<div class="modal fade" id="myModal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Modal title</h4>
-				</div>
-				<div class="modal-body">
-					<p>Here settings can be configured...</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal fade-->
+{#	<div class="modal fade" id="myModal">#}
+{#		<div class="modal-dialog">#}
+{#			<div class="modal-content">#}
+{#				<div class="modal-header">#}
+{#					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>#}
+{#					<h4 class="modal-title">Modal title</h4>#}
+{#				</div>#}
+{#				<div class="modal-body">#}
+{#					<p>Here settings can be configured...</p>#}
+{#				</div>#}
+{#				<div class="modal-footer">#}
+{#					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>#}
+{#					<button type="button" class="btn btn-primary">Save changes</button>#}
+{#				</div>#}
+{#			</div><!-- /.modal-content -->#}
+{#		</div><!-- /.modal-dialog -->#}
+{#	</div><!-- /.modal fade-->#}
 
 	<!-- start: JavaScript-->
 	<script src="/static/js/jquery-2.1.1.min.js"></script>
