@@ -30,6 +30,7 @@ class Task(db.Model):
     code_server = db.Column(db.String(64))
     code_list = db.Column(db.Text)
     time = db.Column(db.DateTime,default=datetime.now())
+    tag = db.Column(db.String(32),default=datetime.now().strftime('%Y%m%d%H%M%S'))
     status = db.Column(db.String(32))
     operation = db.Column(db.String(32))
 
