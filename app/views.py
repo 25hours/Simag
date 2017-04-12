@@ -10,7 +10,8 @@ from datetime import datetime
 def index():
     form = TaskForm()
     if form.validate_on_submit():
-        tasks = Task(project=form.project.data,task=form.task.data,user=current_user,code_server=form.code_server.data,code_list=form.code_list.data,timestamp=datetime.now().strftime('%Y%m%d%H%M'))
+        tasks = Task(project=form.project.data,task=form.task.data,user=current_user,
+                     code_server=form.code_server.data,code_list=form.code_list.data)
         db.session.add(tasks)
         db.session.commit()
         return redirect(url_for('table'))

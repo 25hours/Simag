@@ -1,10 +1,11 @@
 from app import db
 from flask_login import UserMixin
 from app import login_manager
+from datetime import datetime
 
 class User(UserMixin,db.Model):
 # class User(db.Model):
-    __tablename__ = 'Users'
+    __tablename__ = 'User'
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     username = db.Column(db.String(64))
     password = db.Column(db.String(64))
@@ -12,7 +13,8 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(64))
 
     def __repr__(self):
-        return '<%s (%r,%r,%r,%r,%r)>' % (self.__class__.__name__,self.id,self.username,self.password,self.role,self.email)
+        return '<%s (%r,%r,%r,%r,%r)>' % (self.__class__.__name__,self.id,self.username,
+                                          self.password,self.administrator,self.email)
 
 
 @login_manager.user_loader
@@ -27,10 +29,10 @@ class Task(db.Model):
     user = db.Column(db.String(64))
     code_server = db.Column(db.String(64))
     code_list = db.Column(db.Text)
-    timestamp = db.Column(db.DateTime)
+    time = db.Column(db.DateTime,default=datetime.now())
     status = db.Column(db.String(32))
     operation = db.Column(db.String(32))
 
     def __repr__(self):
-        return '<%s (%r,%r,%r,%r,%r)>' % (
-        self.__class__.__name__, self.id, self.username, self.password, self.role, self.email)
+        return '<%s (%r,%r,%r,%r,%r,%r,%r,%r,%r)>' % (self.__class__.__name__,self.id,self.project,self.task,
+                                                      self.user,self.code_server,self.code_list,self.time,self.status,self.operation)
