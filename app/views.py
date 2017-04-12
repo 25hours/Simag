@@ -35,8 +35,12 @@ def login():
     return render_template('login.html',form=form)
 
 @app.route('/table')
+@login_required
 def table():
-    return render_template('table.html')
+    infos = Task.query.order_by(Task.id.desc()).all()
+    # for info in infos:
+    #     print(info)
+    return render_template('table.html',infos=infos)
 
 @app.route('/logout')
 @login_required
