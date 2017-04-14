@@ -38,8 +38,8 @@ def login():
 @login_required
 def table():
     infos = Task.query.order_by(Task.id.desc()).all()
-    # for info in infos:
-    #     print(info)
+    for info in infos:
+        print(info)
     return render_template('table.html',infos=infos)
 
 @app.route('/logout')
