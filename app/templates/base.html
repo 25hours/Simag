@@ -123,11 +123,11 @@
 					</div>
 				</div>
 			</div><!-- end: sidebar -->
+            {% block code_submit %}
+            {% endblock %}
+            {% block code_status %}
+            {% endblock %}
 
-            <div class="main ">
-                {% block code_submit %}
-                {% endblock %}
-            </div><!-- end: main -->
 	    </div><!-- end: row -->
     </div><!-- end: content -->
 
@@ -136,7 +136,7 @@
 {#    <script type="text/javascript">#}
 {#        window.jQuery || document.write("<script src='/static/js/jquery-2.1.1.min.js'>"+"<"+"/script>");#}
 {#    </script>#}
-{#	<script src="../static/js/jquery-migrate-1.2.1.min.js"></script>#}
+	<script src="../static/js/jquery-migrate-1.2.1.min.js"></script>
 	<script src="../static/js/bootstrap.min.js"></script>
 
 	<!-- page scripts -->
