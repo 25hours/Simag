@@ -34,16 +34,17 @@
                             <tbody>
                                 {% for info in infos %}
                                     <tr>
-                                        <td>{{ info.id }}</td>
-                                        <td>{{ info.project }}</td>
-                                        <td>{{ info.task }}</td>
-                                        <td>{{ info.user }}</td>
-                                        <td>{{ info.code_server }}</td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.id }}</pre></td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.project }}</pre></td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.task }}</pre></td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.user }}</pre></td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.code_server }}</pre></td>
                                         <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.code_list }}</pre></td>
-                                        <td>{{ info.time }}</td>
+                                        <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.time }}</pre></td>
                                         <td><span class="label label-success">Active</span></td>
                                         <td>
-                                        <a class="btn btn-success" href="table.html#">
+{#                                        <a class="btn btn-success" href="table.html#">#}
+                                        <a class="btn btn-success" onclick="online()">
                                             <i class="fa fa-share "></i>
                                         </a>
                                         <a class="btn btn-danger" href="table.html#">
@@ -70,6 +71,13 @@
         </div><!--/col-->
     </div><!--/row-->
 </div>
+<script>
+    function online() {
+        $.get("online",function (data,satus) {
+            alert("return:" + data + "\nstatus:" + satus)
+        })
+    }
+</script>
 <script src="../static/plugins/datatables/js/jquery.dataTables.min.js"></script>
 <script src="../static/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
 {% endblock %}

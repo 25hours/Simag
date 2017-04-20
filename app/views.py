@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,url_for,redirect,flash
+from flask import render_template,url_for,redirect,flash,make_response
 from app.forms import LoginForm,TaskForm
 from app.models import *
 from flask_login import login_required,login_user,logout_user,current_user
@@ -54,3 +54,8 @@ def logout():
 @app.route('/base')
 def base():
     return render_template('base.html')
+
+@app.route('/online')
+def online():
+    resp = make_response('ok')
+    return resp
