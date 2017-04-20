@@ -7,24 +7,24 @@
     <title>Simag - Publish</title>
 
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="/static/icon/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../static/icon/favicon.ico" type="image/x-icon" />
 
     <!-- Css files -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/css/jquery.mmenu.css" rel="stylesheet">
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/static/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
-    <link href="/static/plugins/chosen/css/chosen.css" rel="stylesheet">
-    <link href="/static/css/style.min.css" rel="stylesheet">
-    <link href="/static/css/add-ons.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/jquery.mmenu.css" rel="stylesheet">
+    <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../static/plugins/jquery-ui/css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <link href="../static/plugins/chosen/css/chosen.css" rel="stylesheet">
+    <link href="../static/css/style.min.css" rel="stylesheet">
+    <link href="../static/css/add-ons.min.css" rel="stylesheet">
 </head>
 <body>
 	<!-- start: Header -->
 	<div class="navbar" role="navigation">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-actions navbar-left">
-				<li class="visible-md visible-lg"><a href="{{ url_for('index') }}#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
-				<li class="visible-xs visible-sm"><a href="{{ url_for('index') }}#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>
+				<li class="visible-md visible-lg"><a href="{{ url_for('base') }}#" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+				<li class="visible-xs visible-sm"><a href="{{ url_for('base') }}#" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>
 			</ul>
 	        <ul class="nav navbar-nav navbar-right">
 				<li class="dropdown visible-md visible-lg">
@@ -85,7 +85,7 @@
 			<div class="sidebar ">
 				<div class="sidebar-collapse">
 					<div class="sidebar-header t-center">
-                        <span><img class="text-logo" src="/static/images/logo1.png"><i class="fa fa-space-shuttle fa-3x blue"></i></span>
+                        <span><img class="text-logo" src="../static/images/logo1.png"><i class="fa fa-space-shuttle fa-3x blue"></i></span>
                     </div>
 					<div class="sidebar-menu">
 						<ul class="nav nav-sidebar">
@@ -130,36 +130,34 @@
     </div><!-- end: content -->
 
 	<!-- start: JavaScript-->
-	<script src="/static/js/jquery-2.1.1.min.js"></script>
+	<script src="../static/js/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='/static/js/jquery-2.1.1.min.js'>"+"<"+"/script>");
 		</script>
-	<script src="/static/js/jquery-migrate-1.2.1.min.js"></script>
-	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../static/js/bootstrap.min.js"></script>
 
 	<!-- page scripts -->
-	<script src="/static/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
-	<script src="/static/plugins/chosen/js/chosen.jquery.min.js"></script>
-	<script src="/static/plugins/autosize/jquery.autosize.min.js"></script>
-	<script src="/static/plugins/placeholder/jquery.placeholder.min.js"></script>
-	<script src="/static/plugins/maskedinput/jquery.maskedinput.min.js"></script>
-	<script src="/static/plugins/inputlimiter/js/jquery.inputlimiter.1.3.1.min.js"></script>
-	<script src="/static/plugins/datepicker/js/bootstrap-datepicker.min.js"></script>
-	<script src="/static/plugins/timepicker/js/bootstrap-timepicker.min.js"></script>
-	<script src="/static/plugins/moment/moment.min.js"></script>
-	<script src="/static/plugins/daterangepicker/js/daterangepicker.min.js"></script>
-	<script src="/static/plugins/hotkeys/jquery.hotkeys.min.js"></script>
-	<script src="/static/plugins/wysiwyg/bootstrap-wysiwyg.min.js"></script>
-	<script src="/static/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+	<script src="../static/plugins/jquery-ui/js/jquery-ui-1.10.4.min.js"></script>
+	<script src="../static/plugins/chosen/js/chosen.jquery.min.js"></script>
+	<script src="../static/plugins/autosize/jquery.autosize.min.js"></script>
+	<script src="../static/plugins/placeholder/jquery.placeholder.min.js"></script>
+	<script src="../static/plugins/maskedinput/jquery.maskedinput.min.js"></script>
+	<script src="../static/plugins/inputlimiter/js/jquery.inputlimiter.1.3.1.min.js"></script>
+	<script src="../static/plugins/datepicker/js/bootstrap-datepicker.min.js"></script>
+	<script src="../static/plugins/timepicker/js/bootstrap-timepicker.min.js"></script>
+	<script src="../static/plugins/moment/moment.min.js"></script>
+	<script src="../static/plugins/daterangepicker/js/daterangepicker.min.js"></script>
+	<script src="../static/plugins/hotkeys/jquery.hotkeys.min.js"></script>
+	<script src="../static/plugins/wysiwyg/bootstrap-wysiwyg.min.js"></script>
+	<script src="../static/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
 
 	<!-- theme scripts -->
-	<script src="/static/js/SmoothScroll.js"></script>
-	<script src="/static/js/jquery.mmenu.min.js"></script>
-	<script src="/static/js/core.min.js"></script>
-
+	<script src="../static/js/SmoothScroll.js"></script>
+	<script src="../static/js/jquery.mmenu.min.js"></script>
+	<script src="../static/js/core.min.js"></script>
 	<!-- inline scripts related to this page -->
-	<script src="/static/js/pages/form-elements.js"></script>
-
+	<script src="../static/js/pages/form-elements.js"></script>
 	<!-- end: JavaScript-->
 </body>
 </html>
