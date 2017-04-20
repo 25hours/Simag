@@ -50,3 +50,7 @@ def logout():
     # print('==========')
     # print(session['username'])
     return redirect(url_for('login'))
+
+@app.route('/base')
+def base():
+    return render_template('base.html')
