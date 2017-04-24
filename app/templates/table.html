@@ -73,8 +73,9 @@
 </div>
 <script>
     function online() {
-        $.get("online",function (data,satus) {
-            alert("return:" + data + "\nstatus:" + satus)
+{#        $.get("online",function (data,status) {#}
+        $.post("online",{task_id:"line"},function (data) {
+            alert("return:" + data)
         })
     }
 </script>

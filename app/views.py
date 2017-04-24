@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,url_for,redirect,flash,make_response
+from flask import render_template,url_for,redirect,flash,make_response,json,request
 from app.forms import LoginForm,TaskForm
 from app.models import *
 from flask_login import login_required,login_user,logout_user,current_user
@@ -55,7 +55,11 @@ def logout():
 def base():
     return render_template('base.html')
 
-@app.route('/online')
+# from app.online import *
+# app.add_url_rule('/online',view_func=online(task_id=json.request.get_data('task_id')))
+@app.route('/online',methods=['GET','POST'])
 def online():
+    # ll = json.loads(request.from_values('task_id'))
+    print(json.request.get_data('task_id'))
     resp = make_response('ok')
     return resp
