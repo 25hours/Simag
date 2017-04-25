@@ -76,13 +76,16 @@
         $.ajax({
             url:"/online",
             type:"POST",
-            dataType:"json",
+            dataType:"html",
+            mimeType:"application/json",
             data:JSON.stringify({
                 task_id:"line"
             }),
-            mimeType:"application/json",
-            success:function (data) {
-                alert("return:" + data)
+            success:function(result,status){
+                alert("return:" + result + "\nstatus:" + status)
+            },
+            error:function(XMLResponse){
+                alert(XMLResponse.responseText)
             }
         })
 {#        $.get("online",function (data,status) {#}
