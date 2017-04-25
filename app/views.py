@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template,url_for,redirect,flash,make_response,json,request
+from flask import render_template,url_for,redirect,flash,make_response,json
 from app.forms import LoginForm,TaskForm
 from app.models import *
 from flask_login import login_required,login_user,logout_user,current_user
@@ -60,6 +60,16 @@ def base():
 @app.route('/online',methods=['GET','POST'])
 def online():
     # ll = json.loads(request.from_values('task_id'))
-    print(json.request.get_data('task_id'))
+    data = json.request.get_data()
+    jdata = json.loads(data)
+    print(jdata['task_id'])
+    print(type(jdata))
+    print(json.dumps(jdata["task_id"]))
+    print(type(json.dumps(jdata["task_id"])))
+    # ndata = json.loads(data)
+    # print(type(ndata))
+    # print(request.get_json())
+    # print(type(json.loads(data)))
+    # print(json.dumps(data["task_id"]))
     resp = make_response('ok')
     return resp

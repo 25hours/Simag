@@ -73,12 +73,24 @@
 </div>
 <script>
     function online() {
-{#        $.get("online",function (data,status) {#}
-        $.post("online",{task_id:"line"},function (data) {
-            alert("return:" + data)
+        $.ajax({
+            url:"/online",
+            type:"POST",
+            dataType:"json",
+            data:JSON.stringify({
+                task_id:"line"
+            }),
+            mimeType:"application/json",
+            success:function (data) {
+                alert("return:" + data)
+            }
         })
+{#        $.get("online",function (data,status) {#}
+{#        $.post("online",{task_id:"line"},function (data) {#}
+{#            alert("return:" + data)#}
+{#        })#}
     }
 </script>
-<script src="../static/plugins/datatables/js/jquery.dataTables.min.js"></script>
-<script src="../static/plugins/datatables/js/dataTables.bootstrap.min.js"></script>
+{#<script src="../static/plugins/datatables/js/jquery.dataTables.min.js"></script>#}
+{#<script src="../static/plugins/datatables/js/dataTables.bootstrap.min.js"></script>#}
 {% endblock %}
