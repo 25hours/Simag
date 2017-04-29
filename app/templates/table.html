@@ -73,20 +73,22 @@
 </div>
 <script>
     function online() {
+        var data = {task_id:"line"}
         $.ajax({
             url:"/online",
             type:"POST",
             dataType:"html",
             mimeType:"application/json",
-            data:JSON.stringify({
-                task_id:"line"
-            }),
+            data:JSON.stringify(data),
+{#            data:JSON.stringify({#}
+{#                task_id:"line"#}
+{#            }),#}
             success:function(result,status){
                 alert("return:" + result + "\nstatus:" + status)
             },
-            error:function(XMLResponse){
-                alert(XMLResponse.responseText)
-            }
+{#            error:function(XMLResponse){#}
+{#                alert(XMLResponse.responseText)#}
+{#            }#}
         })
 {#        $.get("online",function (data,status) {#}
 {#        $.post("online",{task_id:"line"},function (data) {#}
