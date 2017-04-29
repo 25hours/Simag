@@ -61,6 +61,17 @@ def base():
 @app.route('/online/<string:task_id>',methods=['GET','POST'])
 def online(task_id):
     print(task_id)
+    ready = Task.query.filter_by(id=task_id).first()
+    code_server = ready.code_server
+    code_list = ready.code_list
+    status = ready.status
+    print(ready)
+    print(code_server)
+    print(code_list)
+    print(status)
+    print("ignore:notify the code_server and pass the code_list to it"
+          "ignore:the relevant code_server execute paramiko ftp by code_list"
+          "online relevant code backup and cover the old by ansible and nfs")
     infos = Task.query.order_by(Task.id.desc()).all()
     # for info in infos:
     #     print(info)
