@@ -44,7 +44,7 @@
                                         <td><span class="label label-success">Active</span></td>
                                         <td>
 {#                                        <a class="btn btn-success" href="table.html#">#}
-                                            <a class="btn btn-success" onclick="online()">
+                                            <a href="/online/{{ info.id }}" class="btn btn-success">
                                                 <i class="fa fa-share "></i>
                                             </a>
                                             <a class="btn btn-danger" href="table.html#">
@@ -71,31 +71,31 @@
         </div><!--/col-->
     </div><!--/row-->
 </div>
-<script>
-    function online() {
-        var data = {task_id:"line"}
-        $.ajax({
-            url:"/online",
-            type:"POST",
-            dataType:"html",
-            mimeType:"application/json",
-            data:JSON.stringify(data),
+{#<script>#}
+{#    function online() {#}
+{#        var data = {task_id:"line"}#}
+{#        $.ajax({#}
+{#            url:"/online",#}
+{#            type:"POST",#}
+{#            dataType:"html",#}
+{#            mimeType:"application/json",#}
+{#            data:JSON.stringify(data),#}
 {#            data:JSON.stringify({#}
 {#                task_id:"line"#}
 {#            }),#}
-            success:function(result,status){
-                alert("return:" + result + "\nstatus:" + status)
-            },
+{#            success:function(result,status){#}
+{#                alert("return:" + result + "\nstatus:" + status)#}
+{#            },#}
 {#            error:function(XMLResponse){#}
 {#                alert(XMLResponse.responseText)#}
 {#            }#}
-        })
+{#        })#}
 {#        $.get("online",function (data,status) {#}
 {#        $.post("online",{task_id:"line"},function (data) {#}
 {#            alert("return:" + data)#}
 {#        })#}
-    }
-</script>
+{#    }#}
+{#</script>#}
 {#<script src="../static/plugins/datatables/js/jquery.dataTables.min.js"></script>#}
 {#<script src="../static/plugins/datatables/js/dataTables.bootstrap.min.js"></script>#}
 {% endblock %}

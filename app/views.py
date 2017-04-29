@@ -57,20 +57,29 @@ def base():
 
 # from app.online import *
 # app.add_url_rule('/online',view_func=online(task_id=json.request.get_data('task_id')))
-@app.route('/online',methods=['GET','POST'])
-def online():
-    # ll = json.loads(request.from_values('task_id'))
-    data = json.request.get_data()
-    jdata = json.loads(data)
-    print(jdata['task_id'])
-    print(type(jdata))
-    print(json.dumps(jdata["task_id"]))
-    print(type(json.dumps(jdata["task_id"])))
-    # ndata = json.loads(data)
-    # print(type(ndata))
-    # print(request.get_json())
-    # print(type(json.loads(data)))
-    # print(json.dumps(data["task_id"]))
-    resp = make_response('ok,this is good')
-    print(resp)
-    return resp
+
+@app.route('/online/<string:task_id>',methods=['GET','POST'])
+def online(task_id):
+    print(task_id)
+    infos = Task.query.order_by(Task.id.desc()).all()
+    # for info in infos:
+    #     print(info)
+    return render_template('table.html',infos=infos)
+
+# @app.route('/online',methods=['GET','POST'])
+# def online():
+#     # ll = json.loads(request.from_values('task_id'))
+#     data = json.request.get_data()
+#     jdata = json.loads(data)
+#     print(jdata['task_id'])
+#     print(type(jdata))
+#     print(json.dumps(jdata["task_id"]))
+#     print(type(json.dumps(jdata["task_id"])))
+#     # ndata = json.loads(data)
+#     # print(type(ndata))
+#     # print(request.get_json())
+#     # print(type(json.loads(data)))
+#     # print(json.dumps(data["task_id"]))
+#     resp = make_response('ok,this is good')
+#     print(resp)
+#     return resp
