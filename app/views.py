@@ -69,9 +69,14 @@ def online(task_id):
     print(code_server)
     print(code_list)
     print(status)
-    print("ignore:notify the code_server and pass the code_list to it"
-          "ignore:the relevant code_server execute paramiko ftp by code_list"
-          "online relevant code backup and cover the old by ansible and nfs")
+    print('''ignore:notify the code_server and pass the code_list to it
+          ignore:the relevant code_server execute paramiko ftp by code_list
+          online relevant code backup and cover the old by ansible and nfs''')
+    print(type(code_list))
+    li_code = code_list.split("\n")
+    print(type(li_code))
+    for i in li_code:
+        print(i)
     infos = Task.query.order_by(Task.id.desc()).all()
     # for info in infos:
     #     print(info)
