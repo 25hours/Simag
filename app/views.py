@@ -78,7 +78,8 @@ def online(task_id):
     for i in li_code:
         print(i)
 
-
+    ready.status = 1
+    db.session.commit()
     infos = Task.query.order_by(Task.id.desc()).all()
     # for info in infos:
     #     print(info)
