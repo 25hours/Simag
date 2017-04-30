@@ -37,3 +37,10 @@ class Task(db.Model):
     def __repr__(self):
         return '<%s (%r,%r,%r,%r,%r,%r,%r,%r,%r)>' % (self.__class__.__name__,self.id,self.project,self.task,
                                                       self.user,self.code_server,self.code_list,self.time,self.status,self.operation)
+
+class Code_Server(db.Model):
+    __tablename__ = 'Code_Server'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    code_server = db.Column(db.String(64))
+    def __repr__(self):
+        return '<%s (%r,%r)>' % (self.__class__.__name__,self.id,self.code_server)
