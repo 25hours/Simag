@@ -18,7 +18,8 @@ def index():
         db.session.add(tasks)
         db.session.commit()
         return redirect(url_for('table'))
-    return render_template('index.html',form=form)
+    infos = Task.query.order_by(Task.id.desc()).all()
+    return render_template('index.html',form=form,infos=infos)
 
 @app.route('/login',methods=['GET','POST'])
 def login():
