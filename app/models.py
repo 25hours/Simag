@@ -31,7 +31,7 @@ class Task(db.Model):
     code_list = db.Column(db.Text)
     time = db.Column(db.DateTime,default=datetime.now())
     tag = db.Column(db.String(32),default=datetime.now().strftime('%Y%m%d%H%M%S'))
-    status = db.Column(db.String(32))
+    status = db.Column(db.String(32),default=0)
     operation = db.Column(db.String(32))
 
     def __repr__(self):

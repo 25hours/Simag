@@ -41,7 +41,11 @@
                                         <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.code_server }}</pre></td>
                                         <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.code_list }}</pre></td>
                                         <td><pre style="border: none;background-color: inherit;font-family: inherit">{{ info.time }}</pre></td>
-                                        <td><span class="label label-success">Active</span></td>
+                                        {% if info.status == 1 %}
+                                            <td><span class="label label-success">DONE</span></td>
+                                        {% else %}
+                                            <td><span class="label label-default">UNDONE</span></td>
+                                        {% endif %}
                                         <td>
 {#                                        <a class="btn btn-success" href="table.html#">#}
                                             <a href="/online/{{ info.id }}" class="btn btn-success">
