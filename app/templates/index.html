@@ -31,7 +31,8 @@
                             <label class="col-md-3 control-label" for="selectError2">Project</label>
                             <div class="col-md-9">
                                 <select class="form-control" data-placeholder="Your Favorite Football Team" id="selectError2" name="project" data-rel="chosen">
-                                    <option value="">Please select</option>
+{#                                    <option value="">Please select</option>#}
+                                    <option>Please select</option>
                                     {% for info in infos %}
                                         <option>{{ info.project }}</option>
                                     {% endfor %}
@@ -43,10 +44,14 @@
                             <label class="col-md-3 control-label" for="select">Code Server</label>
                             <div class="col-md-9">
                                 <select id="select" name="code_server" class="form-control" size="1">
-                                    <option value="0">Please select</option>
-                                    <option value="1">Option #1</option>
-                                    <option value="2">Option #2</option>
-                                    <option value="3">Option #3</option>
+{#                                    <option value="0">Please select</option>#}
+                                    <option>Please select</option>
+                                     {% for info in infos %}
+                                        <option>{{ info.code_server }}</option>
+                                    {% endfor %}
+{#                                    <option value="1">Option #1</option>#}
+{#                                    <option value="2">Option #2</option>#}
+{#                                    <option value="3">Option #3</option>#}
                                 </select>
                             </div>
                         </div>
